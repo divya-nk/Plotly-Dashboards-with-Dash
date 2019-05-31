@@ -14,7 +14,12 @@ trace0 = go.Scatter(x=x_values,
 trace1 = go.Scatter(x=x_values,
                     y=y_values,
                     mode = 'lines', name ='linecharts')
-data = [trace0, trace1]
+
+trace2 = go.Scatter(x=x_values,
+                    y=y_values-5,
+                    mode = 'lines+markers', name ='lines+markers')
+
+data = [trace0, trace1, trace2]
 
 layout = go.Layout(title = 'Line Charts', hovermode='closest')
 fig = go.Figure(data = data, layout=layout)
