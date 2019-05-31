@@ -7,10 +7,14 @@ np.random.seed(56)
 x_values = np.linspace(0,1,100)
 y_values = np.random.randn(100)
 
-trace = go.Scatter(x=x_values,
+trace0 = go.Scatter(x=x_values,
                     y=y_values+5,
-                    mode = 'linecharts', name ='markers')
-data = [trace]
+                    mode = 'markers', name ='markers')
+
+trace1 = go.Scatter(x=x_values,
+                    y=y_values,
+                    mode = 'lines', name ='linecharts')
+data = [trace0, trace1]
 
 layout = go.Layout(title = 'Line Charts', hovermode='closest')
 fig = go.Figure(data = data, layout=layout)
